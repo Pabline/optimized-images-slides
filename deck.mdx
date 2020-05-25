@@ -3,52 +3,42 @@ import {
   CodeSurferColumns,
   Step,
 } from "code-surfer";
-import { github, vsDark } from "@code-surfer/themes";
+import { base, ultramin } from "@code-surfer/themes";
+import customTheme from "./custom-theme"
+import customCodeTheme from "./custom-code-theme"
+import Layout from './layout'
 
-export const theme = vsDark;
+export const theme = customTheme;
 
 # Hello 👋
 
 You are using [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us)
 
+<h1>HOLA QUE TAL</h1>
+
 ---
 
-<CodeSurfer>
+<Layout>
 
-```js title="This is a title" subtitle="and this a subtitle"
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
+# Custom Layout
 
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
+**Hola que tal esto es una explicacion**
 
-  if (!sit || ut < 1) {
-    return [];
-  }
+</Layout>
 
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
+---
 
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
+<CodeSurfer theme={customTheme}>
 
-  return aliqua;
-}
+```js title="Using Lazy Loading" subtitle="Look at the first line"
+ <picture>
+  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+  <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
 ```
 
-```js
+```html
 function lorem(ipsum, dolor = 1) {
   const sit = ipsum == null ? 0 : ipsum.sit;
   dolor = sit - amet(dolor);
@@ -98,7 +88,7 @@ function incididunt(ipsum, ut = 1) {
 
 ---
 
-<CodeSurferColumns themes={[vsDark, github]}>
+<CodeSurferColumns themes={[customCodeTheme, ultramin]}>
 
 <Step>
 
@@ -115,31 +105,73 @@ const minim = (ad, enim) => dolore.magna(ad / enim);
 <Step>
 
 ```js
-const lorem = (ipsum, dolor, sit) => {
-  const amet = dolor - ipsum;
-  return consectetur.adipiscing(
-    {
-      elit: sed.eiusmod(sit - dolor) / amet + 2,
-    },
-    (tempor, incididunt) => ipsum + amet * incididunt
-  );
-};
+/**
+   * Sets _rate from data event
+   * @param data
+   */
+  _getRating(data) {
+    const ratingRegex = /rating:(\d)/;
+    if (ratingRegex.test(data)) {
+      this._rate = +ratingRegex.exec(data)[1];
+    } else if (data.rating) {
+      this._rate = data.rating;
+    }
+  }
 
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
+  /**
+   * Check if continue is about or not
+   * @event glomo-opinator-exit
+   * @event logout-success
+   * @event message-snackbar
+   * @event global-message-snackbar
+   */
+  _pageFrom() {
+    if (this.continue === 'about') {
+      this._dispatchEvent('glomo-opinator-exit');
+      this._dispatchEvent('global-message-snackbar', this._getToastSnackBarParams());
+
+    } else {
+      setTimeout(() => {
+        this._dispatchEvent('logout-success');
+        this._dispatchEvent('message-snackbar', this._getToastSnackBarParams());
+      }, 5000);
+    }
+  }
 ```
 
 ```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
+/**
+   * Sets _rate from data event
+   * @param data
+   */
+  _getRating(data) {
+    const ratingRegex = /rating:(\d)/;
+    if (ratingRegex.test(data)) {
+      this._rate = +ratingRegex.exec(data)[1];
+    } else if (data.rating) {
+      this._rate = data.rating;
+    }
+  }
 
-const sed = (eiusmod, tempor, incididunt) => {
-  const ut = tempor - eiusmod;
-  return labore.et(
-    {
-      amet: dolore.magna(incididunt - tempor) / ut + 2,
-    },
-    (aliqua, elit) => eiusmod + ut * elit
-  );
-};
+  /**
+   * Check if continue is about or not
+   * @event glomo-opinator-exit
+   * @event logout-success
+   * @event message-snackbar
+   * @event global-message-snackbar
+   */
+  _pageFrom() {
+    if (this.continue === 'about') {
+      this._dispatchEvent('glomo-opinator-exit');
+      this._dispatchEvent('global-message-snackbar', this._getToastSnackBarParams());
+
+    } else {
+      setTimeout(() => {
+        this._dispatchEvent('logout-success');
+        this._dispatchEvent('message-snackbar', this._getToastSnackBarParams());
+      }, 5000);
+    }
+  }
 ```
 
 </Step>
