@@ -1,25 +1,34 @@
-import sopra from "./background-sopra.png";
 
 export default {
   colors: {
-    background: "#FFF",
-    text: "#111"
+    text: "#111",
+    title: "#CF022B"
   },
   styles: {
-    backgroundImage: sopra,
     h1: {
       color: "#CF022B",
     },
     strong: {
-      fontStyle: "bold"
+      fontStyle: "bold",
+    },
+    li: {
+      fontSize: "2.5rem",
+    },
+    p: {
+      fontSize: "2.5rem",
     },
     CodeSurfer: {
       pre: {
         color: "text",
         backgroundColor: "#FFF",
+        maxHeight: '80vh',
+        width: '90vw',
+        margin: '-10vh'
       },
       code: {
         color: "#000",
+        width: '90vw',
+        margin: '-10vh'
       },
       tokens: {
         "comment cdata doctype": {
@@ -35,7 +44,7 @@ export default {
       },
       title: {
         backgroundColor: "background",
-        color: "text"
+        color: "title"
       },
       selector: {
         color: "rgb(128, 203, 196)"
